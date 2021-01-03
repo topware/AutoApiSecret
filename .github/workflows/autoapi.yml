@@ -20,11 +20,12 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id  # 自己点的 start
     steps:
     - name: Checkout
-      uses: actions/checkout@main
+      uses: actions/checkout@v2
     - name: Set up Python #安装python
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: '3.8'
+        architecture: 'x64'
     - name: Install requests #安装requests
       run: |
         pip install requests
